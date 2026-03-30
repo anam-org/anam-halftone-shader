@@ -1,0 +1,43 @@
+{
+  "name": "@anam-ai/halftone-shader",
+  "version": "0.1.0",
+  "description": "Real-time WebGL halftone effect for images. Framework-agnostic engine with a React wrapper.",
+  "author": "Ema <ema@anam.ai>",
+  "license": "MIT",
+  "homepage": "https://half-tone-shader.vercel.app",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/anam-org/anam-halftone-shader"
+  },
+  "keywords": ["halftone", "webgl", "glsl", "shader", "canvas", "react", "image-effect"],
+  "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.cjs"
+    }
+  },
+  "files": ["dist"],
+  "sideEffects": false,
+  "scripts": {
+    "build": "vite build",
+    "prepublishOnly": "npm run build"
+  },
+  "peerDependencies": {
+    "react": ">=18",
+    "react-dom": ">=18"
+  },
+  "devDependencies": {
+    "@types/node": "^25.3.5",
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "typescript": "^5.7.0",
+    "vite": "^6.0.0",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}
