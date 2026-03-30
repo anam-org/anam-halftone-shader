@@ -4,7 +4,7 @@ A real-time WebGL halftone effect for images. Runs entirely on the GPU via a GLS
 
 Exports a framework-agnostic `HalftoneEngine` class for vanilla JS and a `HalftoneCanvas` React component as a thin wrapper around it.
 
-![anam halftone shader demo](src/assets/anam-halftone-shader-demo.gif)
+![anam halftone shader demo](https://raw.githubusercontent.com/anam-org/anam-shader/main/src/assets/anam-halftone-shader-demo.gif)
 
 Demo: [half-tone-shader.vercel.app](https://half-tone-shader.vercel.app)
 
@@ -108,12 +108,12 @@ const settings = {
 | `saturation` | `number` | `1` | Color saturation of dots |
 | `brightness` | `number` | `1` | Dot brightness |
 | `colorMode` | `'default' \| 'light'` | `'default'` | `'light'` renders white dots with variable opacity |
-| `background` | `boolean` | `true` | Render a white background behind the dots |
+| `background` | `boolean` | `false` | Render a white background behind the dots |
 | `useTint` | `boolean` | `false` | Apply a single tint color to all dots |
 | `tintColor` | `string` | `'#FF6200'` | Hex or RGB color for the tint |
 | `fillPattern` | `boolean` | `false` | Fill empty (non-image) areas with an animated dot pattern |
 | `patternOpacity` | `number` | `0.5` | Opacity of the fill pattern |
-| `sparkleIntensity` | `number` | `0.8` | How strongly dots twinkle (0 = none) |
+| `sparkleIntensity` | `number` | `0.4` | How strongly dots twinkle (0 = none) |
 | `sparkleSpeed` | `number` | `2` | Speed of the sparkle animation |
 | `reveal` | `boolean` | `false` | Animate dots appearing on load |
 | `revealDelay` | `number` | `0` | Seconds before reveal starts |
