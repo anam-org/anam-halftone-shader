@@ -16,12 +16,14 @@ npm install @anam-ai/halftone-shader
 
 ## React usage
 
+Size the wrapper with `aspectRatio` matching your image's natural dimensions. The canvas fills its parent, so the wrapper controls the layout.
+
 ```tsx
 import { HalftoneCanvas, DEFAULT_SETTINGS } from '@anam-ai/halftone-shader'
 
 function App() {
   return (
-    <div style={{ width: 600, height: 400 }}>
+    <div style={{ width: '100%', aspectRatio: '1920 / 1080' }}>
       <HalftoneCanvas
         imageSrc="/your-image.png"
         settings={DEFAULT_SETTINGS}
@@ -31,7 +33,7 @@ function App() {
 }
 ```
 
-The canvas fills its parent container. Size it with CSS on the wrapper element.
+> **Note:** Update `aspectRatio` to match your image's dimensions. For a 800×600 image use `'800 / 600'`, for a square image use `'1 / 1'`, etc. If you swap the image for one with different dimensions, update the ratio to match.
 
 ### Ref handle
 
@@ -39,7 +41,7 @@ Use the ref to access the underlying canvas element or reset the animation:
 
 ```tsx
 import { useRef } from 'react'
-import { HalftoneCanvas, HalftoneCanvasHandle } from '@anam-ai/halftone-shader'
+import { HalftoneCanvas, HalftoneCanvasHandle, DEFAULT_SETTINGS } from '@anam-ai/halftone-shader'
 
 function App() {
   const ref = useRef<HalftoneCanvasHandle>(null)
@@ -54,18 +56,47 @@ function App() {
   }
 
   return (
-    <HalftoneCanvas
-      ref={ref}
-      imageSrc="/your-image.png"
-      settings={DEFAULT_SETTINGS}
-    />
+    <div style={{ width: '100%', aspectRatio: '1920 / 1080' }}>
+      <HalftoneCanvas
+        ref={ref}
+        imageSrc="/your-image.png"
+        settings={DEFAULT_SETTINGS}
+      />
+    </div>
+  )
+}
+```
+
+## Next.js usage
+
+Add `'use client'` since the shader uses browser APIs (WebGL, ResizeObserver):
+
+```tsx
+'use client'
+
+import { HalftoneCanvas, DEFAULT_SETTINGS } from '@anam-ai/halftone-shader'
+
+export default function Page() {
+  return (
+    <div style={{ width: '100%', aspectRatio: '1920 / 1080' }}>
+      <HalftoneCanvas
+        imageSrc="/your-image.png"
+        settings={DEFAULT_SETTINGS}
+      />
+    </div>
   )
 }
 ```
 
 ## Vanilla JS usage
 
-For non-React projects, use `HalftoneEngine` directly:
+For non-React projects, use `HalftoneEngine` directly. Size the canvas via its container element:
+
+```html
+<div style="width: 100%; aspect-ratio: 1920 / 1080;">
+  <canvas id="my-canvas" style="width: 100%; height: 100%;"></canvas>
+</div>
+```
 
 ```js
 import { HalftoneEngine } from '@anam-ai/halftone-shader'
@@ -82,6 +113,8 @@ engine.resetAnimation()
 // Clean up when done
 engine.destroy()
 ```
+
+> **Note:** Update `aspect-ratio` on the container to match your image's natural dimensions. If you swap the image for one with different dimensions, update the ratio to match.
 
 `HalftoneEngine` manages the full GL lifecycle including shader compilation, texture upload, the `requestAnimationFrame` loop, and `ResizeObserver`. Call `destroy()` to release all resources.
 
