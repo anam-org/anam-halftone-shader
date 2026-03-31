@@ -1,6 +1,6 @@
 {
   "name": "@anam-ai/halftone-shader",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Real-time WebGL halftone effect for images. Framework-agnostic engine with a React wrapper.",
   "author": "Ema <ema@anam.ai>",
   "license": "MIT",
@@ -9,7 +9,15 @@
     "type": "git",
     "url": "https://github.com/anam-org/anam-halftone-shader"
   },
-  "keywords": ["halftone", "webgl", "glsl", "shader", "canvas", "react", "image-effect"],
+  "keywords": [
+    "halftone",
+    "webgl",
+    "glsl",
+    "shader",
+    "canvas",
+    "react",
+    "image-effect"
+  ],
   "type": "module",
   "main": "./dist/index.cjs",
   "module": "./dist/index.mjs",
@@ -21,7 +29,9 @@
       "require": "./dist/index.cjs"
     }
   },
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "sideEffects": false,
   "scripts": {
     "build": "vite build",
