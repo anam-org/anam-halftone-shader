@@ -1,10 +1,10 @@
 # @anam-ai/halftone-shader
 
-A real-time WebGL halftone effect for images. Runs entirely on the GPU via a GLSL fragment shader on a `<canvas>` element.
+Use this to turn any image into Anam's half tone effect.
 
-Exports a framework-agnostic `HalftoneEngine` class for vanilla JS and a `HalftoneCanvas` React component as a thin wrapper around it.
+Runs entirely on the GPU via a GLSL fragment shader on a `<canvas>` element. Exports a framework-agnostic `HalftoneEngine` class for vanilla JS and a `HalftoneCanvas` React component as a thin wrapper around it.
 
-![anam halftone shader demo](https://raw.githubusercontent.com/anam-org/anam-shader/main/src/assets/anam-halftone-shader-demo.gif)
+![anam halftone shader demo](https://raw.githubusercontent.com/anam-org/anam-halftone-shader/main/assets/anam-halftone-shader-demo.gif)
 
 Demo: [half-tone-shader.vercel.app](https://half-tone-shader.vercel.app)
 
