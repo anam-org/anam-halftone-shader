@@ -21,7 +21,7 @@ import { HalftoneCanvas, DEFAULT_SETTINGS } from '@anam-ai/halftone-shader'
 
 function App() {
   return (
-    <div style={{ width: 600, height: 400 }}>
+    <div style={{ width: '100%', aspectRatio: '16 / 9' }}>
       <HalftoneCanvas
         imageSrc="/your-image.png"
         settings={DEFAULT_SETTINGS}
@@ -31,7 +31,7 @@ function App() {
 }
 ```
 
-The canvas fills its parent container. Size it with CSS on the wrapper element.
+The canvas fills its parent container. Size the wrapper with CSS — set `aspectRatio` to match your image's proportions (e.g. `'4 / 3'`, `'1 / 1'`).
 
 ### Ref handle
 
