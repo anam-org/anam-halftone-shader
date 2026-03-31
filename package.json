@@ -1,6 +1,6 @@
 {
   "name": "@anam-ai/halftone-shader",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Real-time WebGL halftone effect for images. Framework-agnostic engine with a React wrapper.",
   "author": "Ema <ema@anam.ai>",
   "license": "MIT",
